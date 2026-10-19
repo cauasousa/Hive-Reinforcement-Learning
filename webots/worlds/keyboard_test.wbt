@@ -1,0 +1,174 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+  basicTimeStep 32
+  coordinateSystem "ENU"
+  contactProperties [
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [ 0, 2, 0 ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [ 10, 0 ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [ 0, 2, 0 ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [ 10, 0 ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+  position 23.80 -21.80 18.70
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+
+Floor {
+  translation 8.50 -6.50 0
+  size 17.00 13.00
+  appearance PBRAppearance {
+    baseColor 0.85 0.85 0.85
+    roughness 0.9
+  }
+}
+
+Solid {
+  translation 0.50 -1.50 0.002
+  name "pickup_1_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.96 0.65 0.38 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Solid {
+  translation 16.50 -1.50 0.002
+  name "dropoff_1_16"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.16 0.61 0.56 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Solid {
+  translation 0.50 -6.50 0.002
+  name "pickup_6_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.96 0.65 0.38 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Solid {
+  translation 16.50 -6.50 0.002
+  name "dropoff_6_16"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.16 0.61 0.56 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Solid {
+  translation 0.50 -11.50 0.002
+  name "pickup_11_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.96 0.65 0.38 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Solid {
+  translation 16.50 -11.50 0.002
+  name "dropoff_11_16"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.16 0.61 0.56 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Youbot {
+  translation 15.50 -11.50 0.12
+  name "robot_0"
+  controller "lidar_calibration"
+  controllerArgs ["--robot-id" "0" "--start-row" "11" "--start-col" "15"]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation 0.15 0 0.05
+      name "package_platform"
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.55 0.42 0.28 roughness 0.9 }
+          geometry Box { size 0.12 0.12 0.02 }
+        }
+      ]
+    }
+    Solid {
+  translation -0.15 -0.14 0.355
+  name "status_mast"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.1 0.1 0.1 roughness 0.6 }
+      geometry Cylinder { radius 0.015 height 0.35 subdivision 12 }
+    }
+  ]
+}
+LED {
+  translation -0.15 -0.14 0.530
+  name "led_to_item"
+  color [
+    0.15 0.55 0.95
+  ]
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.12 0.12 0.12 roughness 0.5 }
+      geometry Sphere { radius 0.07 subdivision 2 }
+    }
+  ]
+}
+    LED {
+      translation 0.15 0 0.083
+      name "led_carrying"
+      color [
+        0.82 0.55 0.28
+      ]
+      children [
+        Shape {
+          appearance PBRAppearance { baseColor 0.12 0.1 0.08 roughness 0.85 }
+          geometry Box { size 0.045 0.045 0.045 }
+        }
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+  ]
+}

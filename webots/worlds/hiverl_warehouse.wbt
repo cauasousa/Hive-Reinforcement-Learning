@@ -1,0 +1,314 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+  basicTimeStep 32
+  coordinateSystem "ENU"
+  contactProperties [
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [ 0, 2, 0 ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [ 10, 0 ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [ 0, 2, 0 ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [ 10, 0 ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+  position 23.80 -21.80 18.70
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+
+Floor {
+  translation 8.50 -6.50 0
+  size 17.00 13.00
+  appearance PBRAppearance {
+    baseColor 0.85 0.85 0.85
+    roughness 0.9
+  }
+}
+
+Solid {
+  translation 0.50 -1.50 0.002
+  name "pickup_1_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.96 0.65 0.38 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+DEF PACKAGE_1_0 Solid {
+  translation 0.50 -1.50 0.032
+  name "package_1_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.82 0.55 0.28 roughness 0.85 }
+      geometry Box { size 0.06 0.06 0.06 }
+    }
+  ]
+  boundingObject Box { size 0.06 0.06 0.06 }
+  physics Physics { density -1 mass 0.05 }
+}
+
+Solid {
+  translation 16.50 -1.50 0.002
+  name "dropoff_1_16"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.16 0.61 0.56 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Solid {
+  translation 0.50 -6.50 0.002
+  name "pickup_6_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.96 0.65 0.38 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+DEF PACKAGE_6_0 Solid {
+  translation 0.50 -6.50 0.032
+  name "package_6_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.82 0.55 0.28 roughness 0.85 }
+      geometry Box { size 0.06 0.06 0.06 }
+    }
+  ]
+  boundingObject Box { size 0.06 0.06 0.06 }
+  physics Physics { density -1 mass 0.05 }
+}
+
+Solid {
+  translation 16.50 -6.50 0.002
+  name "dropoff_6_16"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.16 0.61 0.56 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Solid {
+  translation 0.50 -11.50 0.002
+  name "pickup_11_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.96 0.65 0.38 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+DEF PACKAGE_11_0 Solid {
+  translation 0.50 -11.50 0.032
+  name "package_11_0"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.82 0.55 0.28 roughness 0.85 }
+      geometry Box { size 0.06 0.06 0.06 }
+    }
+  ]
+  boundingObject Box { size 0.06 0.06 0.06 }
+  physics Physics { density -1 mass 0.05 }
+}
+
+Solid {
+  translation 16.50 -11.50 0.002
+  name "dropoff_11_16"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.16 0.61 0.56 roughness 1 metalness 0 }
+      geometry Box { size 0.95 0.95 0.002 }
+    }
+  ]
+}
+
+Youbot {
+  translation 3.50 -6.50 0.12
+  name "robot_0"
+  controller "goto_pickup_test"
+  controllerArgs ["--robot-id" "0" "--start-row" "6" "--start-col" "3" "--pickup-row" "6"]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+  translation -0.15 -0.14 0.355
+  name "status_mast"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.1 0.1 0.1 roughness 0.6 }
+      geometry Cylinder { radius 0.015 height 0.35 subdivision 12 }
+    }
+  ]
+}
+LED {
+  translation -0.15 -0.14 0.530
+  name "led_to_item"
+  color [
+    0.15 0.55 0.95
+  ]
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.12 0.12 0.12 roughness 0.5 }
+      geometry Sphere { radius 0.07 subdivision 2 }
+    }
+  ]
+}
+  ]
+}
+
+Youbot {
+  translation 2.50 -9.50 0.12
+  name "robot_1"
+  controller "goto_pickup_test"
+  controllerArgs ["--robot-id" "1" "--start-row" "9" "--start-col" "2" "--pickup-row" "11"]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+  translation -0.15 -0.14 0.355
+  name "status_mast"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.1 0.1 0.1 roughness 0.6 }
+      geometry Cylinder { radius 0.015 height 0.35 subdivision 12 }
+    }
+  ]
+}
+LED {
+  translation -0.15 -0.14 0.530
+  name "led_to_item"
+  color [
+    0.15 0.55 0.95
+  ]
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.12 0.12 0.12 roughness 0.5 }
+      geometry Sphere { radius 0.07 subdivision 2 }
+    }
+  ]
+}
+  ]
+}
+
+Youbot {
+  translation 7.50 -0.50 0.12
+  name "robot_2"
+  controller "<extern>"
+  controllerArgs ["--robot-id" "2" "--start-row" "0" "--start-col" "7"]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+  translation -0.15 -0.14 0.355
+  name "status_mast"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.1 0.1 0.1 roughness 0.6 }
+      geometry Cylinder { radius 0.015 height 0.35 subdivision 12 }
+    }
+  ]
+}
+LED {
+  translation -0.15 -0.14 0.530
+  name "led_to_item"
+  color [
+    0.15 0.55 0.95
+  ]
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.12 0.12 0.12 roughness 0.5 }
+      geometry Sphere { radius 0.07 subdivision 2 }
+    }
+  ]
+}
+  ]
+}
+
+Youbot {
+  translation 16.50 -12.50 0.12
+  name "robot_3"
+  controller "arm_angle_tuner"
+  controllerArgs ["--robot-id" "3" "--start-row" "12" "--start-col" "16"]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+  translation -0.15 -0.14 0.355
+  name "status_mast"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.1 0.1 0.1 roughness 0.6 }
+      geometry Cylinder { radius 0.015 height 0.35 subdivision 12 }
+    }
+  ]
+}
+LED {
+  translation -0.15 -0.14 0.530
+  name "led_to_item"
+  color [
+    0.15 0.55 0.95
+  ]
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.12 0.12 0.12 roughness 0.5 }
+      geometry Sphere { radius 0.07 subdivision 2 }
+    }
+  ]
+}
+  ]
+}
+
+Youbot {
+  translation 1.50 -3.50 0.12
+  name "robot_4"
+  controller "goto_pickup_test"
+  controllerArgs ["--robot-id" "4" "--start-row" "3" "--start-col" "1"]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+  translation -0.15 -0.14 0.355
+  name "status_mast"
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.1 0.1 0.1 roughness 0.6 }
+      geometry Cylinder { radius 0.015 height 0.35 subdivision 12 }
+    }
+  ]
+}
+LED {
+  translation -0.15 -0.14 0.530
+  name "led_to_item"
+  color [
+    0.15 0.55 0.95
+  ]
+  children [
+    Shape {
+      appearance PBRAppearance { baseColor 0.12 0.12 0.12 roughness 0.5 }
+      geometry Sphere { radius 0.07 subdivision 2 }
+    }
+  ]
+}
+  ]
+}

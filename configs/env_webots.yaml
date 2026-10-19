@@ -1,0 +1,32 @@
+# Same map as env_small.yaml, but for scripts/train_mappo_webots.py specifically -- do NOT use
+# for scripts/train_mappo.py (the grid trainer already works fine with env_small.yaml's settings).
+#
+# Why this needs to differ: env_small.yaml's order_spawn_interval=1 assumes a fast, physics-free
+# grid env doing hundreds of ticks per PPO update. A real Webots fine-tuning round only sees a
+# handful of real ticks (each costing real wall-clock seconds), so a new order every single tick
+# floods the queue (confirmed live: hits max_queue_size within ~20 ticks) far faster than a small
+# fleet can clear it -- and since run_auction always assigns the *nearest* idle robot to each
+# pickup with no fairness/aging, any robot whose spawn cell is far from every pickup station
+# (pickup_stations are clustered at column 0 in this map; a robot spawning near column 15-16 is
+# ~15 cells away) never wins that comparison against closer competitors and sits IDLE the entire
+# session -- confirmed live: 2 of 5 robots never moved once in 50 ticks. Their action never gets
+# applied (IDLE robots are autopilot-controlled, not RL-controlled), so that fraction of the PPO
+# rollout buffer carries no real training signal, which is what showed up as policy_loss ~= 0 and
+# frozen entropy. A much sparser spawn rate keeps the queue from staying permanently oversubscribed
+# by whichever robots happen to start closest to a station, giving every robot a real chance at an
+# assignment over a run's lifetime instead of just the geometrically-lucky ones.
+width: 17
+height: 13
+num_shelf_blocks_x: 3
+num_shelf_blocks_y: 2
+shelf_block_w: 2
+shelf_block_h: 3
+num_pickup_stations: 3
+num_dropoff_stations: 3
+num_robots: 5
+order_spawn_interval: 8
+max_queue_size: 20
+view_radius: 3
+max_episode_steps: 1000
+deadlock_wait_threshold: 1
+seed: 42

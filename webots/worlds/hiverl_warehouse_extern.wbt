@@ -1,0 +1,762 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0943951023931953
+  position 14.297930654515705 -12.739585020379039 69.92938823172713
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  translation 8.5 -6.5 0
+  size 17 13
+  appearance PBRAppearance {
+    baseColor 0.85 0.85 0.85
+    roughness 0.9
+  }
+}
+Solid {
+  translation 8.5 -13 0.25
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.4 0.4
+      }
+      geometry Box {
+        size 17 0.2 0.5
+      }
+    }
+  ]
+  name "wall_top"
+  boundingObject Box {
+    size 17 0.2 0.5
+  }
+}
+Solid {
+  translation 8.5 0 0.25
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.4 0.4
+      }
+      geometry Box {
+        size 17 0.2 0.5
+      }
+    }
+  ]
+  name "wall_bottom"
+  boundingObject Box {
+    size 17 0.2 0.5
+  }
+}
+Solid {
+  translation 0 -6.5 0.25
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.4 0.4
+      }
+      geometry Box {
+        size 0.2 13.2 0.5
+      }
+    }
+  ]
+  name "wall_left"
+  boundingObject Box {
+    size 0.2 13.2 0.5
+  }
+}
+Solid {
+  translation 17 -6.5 0.25
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.4 0.4
+      }
+      geometry Box {
+        size 0.2 13.2 0.5
+      }
+    }
+  ]
+  name "wall_right"
+  boundingObject Box {
+    size 0.2 13.2 0.5
+  }
+}
+Solid {
+  translation 0.5 -1.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.96 0.65 0.38
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "pickup_1_0"
+}
+DEF PACKAGE_1_0 Solid {
+  translation 0.5 -1.5 0.029979159707383556
+  rotation -0.23204769603244207 -0.6961430880972944 -0.6793663721883781 6.379280602553282e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.82 0.55 0.28
+        roughness 0.85
+      }
+      geometry Box {
+        size 0.06 0.06 0.06
+      }
+    }
+  ]
+  name "package_1_0"
+  boundingObject Box {
+    size 0.06 0.06 0.06
+  }
+  physics Physics {
+    density -1
+    mass 0.05
+  }
+  recognitionColors [
+    0.82 0.55 0.28
+  ]
+  linearVelocity 1.8508665006286483e-19 3.9861935765229904e-18 9.534700111817463e-06
+  angularVelocity -9.25185853854298e-16 -9.25185853854297e-16 2.539611432619563e-17
+}
+Solid {
+  translation 16.5 -1.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.16 0.61 0.56
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "dropoff_1_16"
+}
+Solid {
+  translation 0.5 -6.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.96 0.65 0.38
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "pickup_6_0"
+}
+DEF PACKAGE_6_0 Solid {
+  translation 0.5 -6.5 0.029979159707383563
+  rotation 0.5664914112628152 0.7081142640785213 0.42149931194961404 1.0452390533985509e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.82 0.55 0.28
+        roughness 0.85
+      }
+      geometry Box {
+        size 0.06 0.06 0.06
+      }
+    }
+  ]
+  name "package_6_0"
+  boundingObject Box {
+    size 0.06 0.06 0.06
+  }
+  physics Physics {
+    density -1
+    mass 0.05
+  }
+  recognitionColors [
+    0.82 0.55 0.28
+  ]
+  linearVelocity -2.762508123800583e-17 5.1480044036566313e-17 9.534700111915262e-06
+  angularVelocity -9.251858538542966e-16 -1.3877787807814445e-15 2.0978072880007718e-16
+}
+Solid {
+  translation 16.5 -6.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.16 0.61 0.56
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "dropoff_6_16"
+}
+Solid {
+  translation 0.5 -11.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.96 0.65 0.38
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "pickup_11_0"
+}
+DEF PACKAGE_11_0 Solid {
+  translation 0.5 -11.5 0.02997915970738356
+  rotation 0.4674800032922475 -0.8180900057614449 -0.33494953201209204 1.266618769352101e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.82 0.55 0.28
+        roughness 0.85
+      }
+      geometry Box {
+        size 0.06 0.06 0.06
+      }
+    }
+  ]
+  name "package_11_0"
+  boundingObject Box {
+    size 0.06 0.06 0.06
+  }
+  physics Physics {
+    density -1
+    mass 0.05
+  }
+  recognitionColors [
+    0.82 0.55 0.28
+  ]
+  linearVelocity 8.984081200255638e-18 -8.339735407738925e-17 9.534700111886661e-06
+  angularVelocity 2.7755575615628914e-15 1.3877787807814459e-15 2.5915739804395234e-17
+}
+Solid {
+  translation 16.5 -11.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.16 0.61 0.56
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "dropoff_11_16"
+}
+Youbot {
+  hidden position_0_0 -3.401620942256045e-06
+  hidden position_0_1 -3.4055567432744738e-06
+  hidden position_0_2 4.464882745638106e-06
+  hidden position_0_3 4.462190631627277e-06
+  hidden position_5_0 1.6180108451501917e-06
+  hidden rotation_6 0 0 1 1.6181316328643082e-06
+  hidden position_6_0 1.4000024201667292
+  hidden rotation_7 0 -1 0 1.4000024201667292
+  hidden position_7_0 -2.5000016281035222
+  hidden rotation_8 0 1 0 2.5000016281035222
+  hidden position_8_0 1.6000003080266179
+  hidden rotation_9 0 -1 0 1.6000003080266179
+  hidden position_9_0 -1.356009491360055e-07
+  hidden rotation_10 0 0 -1 1.3657139822709086e-07
+  hidden position_10_0 0.024999997054321557
+  hidden position_10_1 0.024999997004977837
+  hidden translation_11 0 0.024999997054321557 0.09
+  hidden translation_12 0 -0.024999997004977837 0.09
+  hidden rotation_13 0 -0.9999999999999999 0 3.401644962640284e-06
+  hidden rotation_14 0 -0.9999999999999999 0 3.4055592498805593e-06
+  hidden rotation_15 0 0.9999999999999999 0 4.4648812559997145e-06
+  hidden rotation_16 0 1 0 4.462194954598652e-06
+  translation 15.500147383895735 -11.499987520419264 0.09887538481608643
+  rotation -0.024971978245362556 0.9996795146164161 0.004155521483508757 0.00327195257179935
+  name "robot_0"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "0"
+    "--start-row"
+    "11"
+    "--start-col"
+    "15"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_0 Camera {
+      translation 0.156 0 0.3
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}
+Youbot {
+  hidden position_0_0 -3.4016209413678666e-06
+  hidden position_0_1 -3.4055567406099385e-06
+  hidden position_0_2 4.4648827460049536e-06
+  hidden position_0_3 4.462190626771026e-06
+  hidden position_5_0 1.618010845966157e-06
+  hidden rotation_6 0 0 1 1.6181316328643082e-06
+  hidden position_6_0 1.4000024201667285
+  hidden rotation_7 0 -1 0 1.4000024201667285
+  hidden position_7_0 -2.50000162810352
+  hidden rotation_8 0 0.9999999999999999 0 2.50000162810352
+  hidden position_8_0 1.6000003080266174
+  hidden rotation_9 0 -1 0 1.6000003080266174
+  hidden position_9_0 -1.3560094884439833e-07
+  hidden rotation_10 0 0 -1 1.3657139822709086e-07
+  hidden position_10_0 0.02499999705431978
+  hidden position_10_1 0.024999997004977837
+  hidden translation_11 0 0.02499999705431978 0.09
+  hidden translation_12 0 -0.024999997004977837 0.09
+  hidden rotation_13 0 -1 0 3.401644962640284e-06
+  hidden rotation_14 0 -1 0 3.4055592498805593e-06
+  hidden rotation_15 0 1 0 4.4648812559997145e-06
+  hidden rotation_16 0 1 0 4.462194954598652e-06
+  translation 2.5001473838957304 -9.499987520419262 0.09887538481608649
+  rotation -0.02497197824522894 0.9996795146164218 0.0041555214829367155 0.0032719525717992723
+  name "robot_1"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "1"
+    "--start-row"
+    "9"
+    "--start-col"
+    "2"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_1 Camera {
+      translation 0.156 0 0.3
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}
+Youbot {
+  hidden position_0_0 -3.40162093959151e-06
+  hidden position_0_1 -3.405556744162652e-06
+  hidden position_0_2 4.464882746463797e-06
+  hidden position_0_3 4.462190626690791e-06
+  hidden position_5_0 1.6180108446820006e-06
+  hidden rotation_6 0 0 1 1.6181316328643082e-06
+  hidden position_6_0 1.4000024201667294
+  hidden rotation_7 0 -1 0 1.4000024201667294
+  hidden position_7_0 -2.5000016281035222
+  hidden rotation_8 0 1 0 2.5000016281035222
+  hidden position_8_0 1.6000003080266183
+  hidden rotation_9 0 -1 0 1.6000003080266185
+  hidden position_9_0 -1.3560094907391617e-07
+  hidden rotation_10 0 0 -1 1.3657139822709086e-07
+  hidden position_10_0 0.024999997054320558
+  hidden position_10_1 0.024999997004977615
+  hidden translation_11 0 0.024999997054320558 0.09
+  hidden translation_12 0 -0.024999997004977615 0.09
+  hidden rotation_13 0 -1 0 3.401644962640284e-06
+  hidden rotation_14 0 -1 0 3.4055592498805593e-06
+  hidden rotation_15 0 1 0 4.4648812559997145e-06
+  hidden rotation_16 0 1 0 4.462194954598652e-06
+  translation 7.500147383895729 -0.49998752041926275 0.09887538481608651
+  rotation -0.02497197824533995 0.9996795146164269 0.00415552148104704 0.0032719525717990446
+  name "robot_2"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "2"
+    "--start-row"
+    "0"
+    "--start-col"
+    "7"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_2 Camera {
+      translation 0.156 0 0.3
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}
+Youbot {
+  hidden position_0_0 -3.4016209404796882e-06
+  hidden position_0_1 -3.4055567432744738e-06
+  hidden position_0_2 4.464882746173506e-06
+  hidden position_0_3 4.462190624168918e-06
+  hidden position_5_0 1.6180108444718846e-06
+  hidden rotation_6 0 0 1 1.6181316328643082e-06
+  hidden position_6_0 1.4000024201667294
+  hidden rotation_7 0 -1 0 1.4000024201667294
+  hidden position_7_0 -2.500001628103522
+  hidden rotation_8 0 1 0 2.500001628103522
+  hidden position_8_0 1.6000003080266174
+  hidden rotation_9 0 -1 0 1.6000003080266174
+  hidden position_9_0 -1.3560095002418393e-07
+  hidden rotation_10 0 0 -1 1.3657139822709086e-07
+  hidden position_10_0 0.02499999705431978
+  hidden position_10_1 0.024999997004977837
+  hidden translation_11 0 0.02499999705431978 0.09
+  hidden translation_12 0 -0.024999997004977837 0.09
+  hidden rotation_13 0 -1 0 3.401644962640284e-06
+  hidden rotation_14 0 -0.9999999999999999 0 3.4055592498805593e-06
+  hidden rotation_15 0 1 0 4.4648812559997145e-06
+  hidden rotation_16 0 1 0 4.462194954598652e-06
+  translation 16.500147383895715 -12.499987520419264 0.09887538481608647
+  rotation -0.024971978245278997 0.999679514616413 0.004155521484719079 0.003271952571798433
+  name "robot_3"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "3"
+    "--start-row"
+    "12"
+    "--start-col"
+    "16"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_3 Camera {
+      translation 0.156 0 0.3
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}
+Youbot {
+  hidden position_0_0 -3.401620942256045e-06
+  hidden position_0_1 -3.405556741498117e-06
+  hidden position_0_2 4.464882745089206e-06
+  hidden position_0_3 4.462190632240081e-06
+  hidden position_5_0 1.6180108442828865e-06
+  hidden rotation_6 0 0 1 1.6181316328643082e-06
+  hidden position_6_0 1.4000024201667294
+  hidden rotation_7 0 -1 0 1.4000024201667294
+  hidden position_7_0 -2.500001628103521
+  hidden rotation_8 0 1 0 2.500001628103521
+  hidden position_8_0 1.6000003080266179
+  hidden rotation_9 0 -1 0 1.6000003080266179
+  hidden position_9_0 -1.3560094974279757e-07
+  hidden rotation_10 0 0 -1 1.3657139822709086e-07
+  hidden position_10_0 0.02499999705432067
+  hidden position_10_1 0.024999997004977393
+  hidden translation_11 0 0.02499999705432067 0.09
+  hidden translation_12 0 -0.024999997004977393 0.09
+  hidden rotation_13 0 -0.9999999999999999 0 3.401644962640284e-06
+  hidden rotation_14 0 -1 0 3.4055592498805593e-06
+  hidden rotation_15 0 1 0 4.4648812559997145e-06
+  hidden rotation_16 0 1 0 4.462194954598652e-06
+  translation 1.5001473838957293 -3.499987520419261 0.09887538481608649
+  rotation -0.02497197824554676 0.9996795146164208 0.0041555214812919235 0.003271952571798944
+  name "robot_4"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "4"
+    "--start-row"
+    "3"
+    "--start-col"
+    "1"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_4 Camera {
+      translation 0.156 0 0.3
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+# Demo-scale warehouse configuration used for smoke tests and quick training runs.
+# Bump width/height/num_robots for a full-scale run (see README.md).
+width: 17
+height: 13
+num_shelf_blocks_x: 3
+num_shelf_blocks_y: 2
+shelf_block_w: 2
+shelf_block_h: 3
+num_pickup_stations: 3
+num_dropoff_stations: 3
+num_robots: 4
+order_spawn_interval: 1      # steps between new orders appearing in the queue
+max_queue_size: 20
+view_radius: 3                # local crop is (2*view_radius+1)^2 = 7x7
+max_episode_steps: 1000   # generous margin over the ~16-26 step optimal round trip so an
+                          # early-training (still-noisy) policy has a real chance to reach a
+                          # delivery instead of getting reset mid-journey every time
+deadlock_wait_threshold: 1     # consecutive blocked steps before shield reversal kicks in
+seed: 42

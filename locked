@@ -1,0 +1,46 @@
+PYTHONPATH="$WEBOTS_HOME/lib/controller/python:$PYTHONPATH" python3 -c "from controller import Robot; print('import OK')"
+
+echo 'export WEBOTS_HOME=/usr/local/webots' >> ~/.bashrc
+
+export WEBOTS_HOME=/usr/local/webots
+
+cd /mnt/c/Users/CauaS/programacao/new_project/HiveRL
+ 
+source ~/hiverl-ros2-venv/bin/activate
+
+source /opt/ros/jazzy/setup.bash
+
+./scripts/run_extern_controllers.sh webots/worlds/hiverl_warehouse_extern.wbt.robots.json localhost 1234
+
+2
+
+python scripts/train_mappo_webots.py --continuous-actions --env-config configs/env_webots.yaml --robots 5 --checkpoint-in outputs/mappo_checkpoint_continuous_webots_finetuned_56_best.pt --checkpoint-out outputs/mappo_checkpoint_continuous_webots_finetuned_57.pt --rounds 300 --ticks 5000 --arrival-timeout 500 --velocity-tick-sleep-s 0.3 --min-update-ticks 4000 --update-epochs 15 --minibatches 4 --learning-rate 0.0001 --actor-log-std-init -1.0 --disable-legacy-retreats 2>&1 | tee outputs/mappo_checkpoint_continuous_webots_finetuned_57_train.log
+
+====
+
+python scripts/train_mappo_webots.py     --continuous-actions  --env-config configs/env_webots.yaml   --robots 5     --checkpoint-in outputs/mappo_checkpoint_continuous_webots_finetuned_30.pt     --checkpoint-out outputs/mappo_checkpoint_continuous_webots_finetuned_31.pt     --rounds 1000     --ticks 160     --arrival-timeout 60 --log-std-anneal-rounds 200 2>&1 | tee outputs/train_mappo_webots_bigrun.log
+3 
+
+python scripts/run_lockstep_demo.py --policy checkpoint --checkpoint outputs/mappo_checkpoint.pt --driver ros2 --robots 5 --ticks 
+
+python scripts/run_lockstep_demo.py --policy checkpoint --checkpoint outputs/mappo_checkpoint_continuous_best.pt --driver ros2 --robots 5 --ticks 
+
+
+
+
+ python scripts/train_mappo_webots.py \
+  --continuous-actions \
+  --env-config configs/env_webots.yaml \
+  --robots 5 \
+  --checkpoint-in outputs/mappo_checkpoint_continuous_webots_finetuned_52_bcwarm.pt \
+  --checkpoint-out outputs/mappo_checkpoint_continuous_webots_finetuned_54.pt \
+  --rounds 5 \
+  --ticks 1500 \
+  --arrival-timeout 60 \
+  --velocity-tick-sleep-s 0.3 \
+  --min-update-ticks 1000 \
+  --update-epochs 15 \
+  --minibatches 2 \
+  --learning-rate 0.0001 \
+  --actor-log-std-init -1.0 \
+  2>&1 | tee outputs/mappo_checkpoint_continuous_webots_finetuned_53_bcwarm_test2.log

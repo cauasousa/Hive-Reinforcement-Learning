@@ -1,0 +1,27 @@
+# PPO hyperparameters for --continuous-actions runs. Same as train_config.yaml except
+# entropy_coef, which is lower here on purpose.
+#
+# Why: train_config.yaml's entropy_coef=0.01 was tuned against the discrete policy's Categorical
+# entropy (bounded, typically < log(5) ~= 1.6). ContinuousActorCriticNet's Gaussian entropy starts
+# much higher (~2.8, matching this project's own training logs) since it's differential entropy,
+# not bounded the same way. entropy_coef * entropy at that scale (~0.01 * 2.8 = 0.028) can exceed
+# the policy_loss magnitude seen in early continuous-action runs (typically 0.002-0.013) -- the
+# term pushing the policy to *stay* spread out/noisy can dominate the term that actually improves
+# it. A 500k-step continuous run plateaued at a noisy negative reward with almost no deliveries,
+# closely matching the discrete policy's own documented "Round 1" (see README.md's "Bugs found"
+# log) before its reward-shaping fixes -- this config is the continuous-mode analogue of that first
+# real tuning pass, not yet validated by a before/after run the way those were.
+total_timesteps: 20000
+rollout_steps: 1024
+update_epochs: 4
+minibatches: 4
+gamma: 0.99
+gae_lambda: 0.95
+clip_range: 0.2
+value_coef: 0.5
+entropy_coef: 0.01
+learning_rate: 0.0003
+max_grad_norm: 0.5
+hidden_dim: 64
+log_interval_updates: 1
+seed: 42

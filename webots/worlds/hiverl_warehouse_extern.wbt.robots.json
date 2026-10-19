@@ -1,0 +1,26 @@
+{
+  "robot_model": "youbot",
+  "controller": "youbot_mecanum",
+  "start_cells": [
+    [
+      11,
+      15
+    ],
+    [
+      9,
+      2
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      12,
+      16
+    ],
+    [
+      3,
+      1
+    ]
+  ]
+}

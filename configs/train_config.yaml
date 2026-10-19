@@ -1,0 +1,15 @@
+# PPO / MAPPO hyperparameters.
+total_timesteps: 20000     # smoke-scale; raise to 2_000_000+ for real convergence
+rollout_steps: 256         # env steps collected per update (per robot)
+update_epochs: 4
+minibatches: 4
+gamma: 0.99
+gae_lambda: 0.95
+clip_range: 0.2
+value_coef: 0.5
+entropy_coef: 0.01
+learning_rate: 0.0003
+max_grad_norm: 0.5
+hidden_dim: 128
+log_interval_updates: 1
+seed: 42

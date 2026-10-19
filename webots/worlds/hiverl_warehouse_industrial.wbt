@@ -1,0 +1,5588 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/kuka/youbot/protos/Youbot.proto"
+
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material1 "InteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation -0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+    ContactProperties {
+      material1 "ExteriorWheelMat"
+      coulombFriction [
+        0, 2, 0
+      ]
+      frictionRotation 0.785398 0
+      bounce 0
+      forceDependentSlip [
+        10, 0
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.514254673726557 0.5129670457176149 0.6873186601265344 1.939615507509983
+  position 8.301659574644834 -15.642091161286135 34.131881095748824
+  near 0.1
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+  luminosity 0.75
+}
+Floor {
+  translation 8.5 -6.5 0
+  size 17 13
+  tileSize 4 4
+  appearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/concrete_floor.png"
+      ]
+    }
+    roughness 0.85
+    metalness 0
+  }
+}
+Solid {
+  translation 8.5 -13 0.25
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.4 0.4
+      }
+      geometry Box {
+        size 17 0.2 0.5
+      }
+    }
+  ]
+  name "wall_top"
+  boundingObject Box {
+    size 17 0.2 0.5
+  }
+}
+Solid {
+  translation 8.5 0 0.25
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.4 0.4
+      }
+      geometry Box {
+        size 17 0.2 0.5
+      }
+    }
+  ]
+  name "wall_bottom"
+  boundingObject Box {
+    size 17 0.2 0.5
+  }
+}
+Solid {
+  translation 0 -6.5 0.25
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.4 0.4
+      }
+      geometry Box {
+        size 0.2 13.2 0.5
+      }
+    }
+  ]
+  name "wall_left"
+  boundingObject Box {
+    size 0.2 13.2 0.5
+  }
+}
+Solid {
+  translation 17 -6.5 0.25
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.4 0.4 0.4
+      }
+      geometry Box {
+        size 0.2 13.2 0.5
+      }
+    }
+  ]
+  name "wall_right"
+  boundingObject Box {
+    size 0.2 13.2 0.5
+  }
+}
+Solid {
+  translation 0.5 -1.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.96 0.65 0.38
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "pickup_1_0"
+}
+DEF PACKAGE_1_0 Solid {
+  translation 0.5 -1.5 0.029980894958398497
+  rotation -0.025201903117602002 0.016801268744988388 -0.9995411854685177 8.810628462886938e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.82 0.55 0.28
+        roughness 0.85
+      }
+      geometry Box {
+        size 0.06 0.06 0.06
+      }
+    }
+  ]
+  name "package_1_0"
+  boundingObject Box {
+    size 0.06 0.06 0.06
+  }
+  physics Physics {
+    density -1
+    mass 0.05
+  }
+  recognitionColors [
+    0.82 0.55 0.28
+  ]
+  linearVelocity 1.0893134682116307e-17 -2.6489338538213698e-17 -4.023603710869834e-06
+  angularVelocity 6.938893903907224e-16 -4.625929269271484e-16 1.0423287652350288e-16
+}
+Solid {
+  translation 16.5 -1.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.16 0.61 0.56
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "dropoff_1_16"
+}
+Solid {
+  translation 0.5 -6.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.96 0.65 0.38
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "pickup_6_0"
+}
+DEF PACKAGE_6_0 Solid {
+  translation 0.5 -6.5 0.02998089495839851
+  rotation -0.024589613113583066 -0.03278615081806778 0.9991598567003475 9.030016206406396e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.82 0.55 0.28
+        roughness 0.85
+      }
+      geometry Box {
+        size 0.06 0.06 0.06
+      }
+    }
+  ]
+  name "package_6_0"
+  boundingObject Box {
+    size 0.06 0.06 0.06
+  }
+  physics Physics {
+    density -1
+    mass 0.05
+  }
+  recognitionColors [
+    0.82 0.55 0.28
+  ]
+  linearVelocity -3.3757398191340274e-17 -6.667839021667777e-17 -4.023603710869844e-06
+  angularVelocity 1.1564823173178715e-15 -9.251858538542974e-16 8.684029272496735e-17
+}
+Solid {
+  translation 16.5 -6.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.16 0.61 0.56
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "dropoff_6_16"
+}
+Solid {
+  translation 0.5 -11.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.96 0.65 0.38
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "pickup_11_0"
+}
+DEF PACKAGE_11_0 Solid {
+  translation 0.5 -11.5 0.029980894958398507
+  rotation 0.20535111004965118 0.23957629505787256 0.9489120720318187 4.3251698005692033e-16
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.82 0.55 0.28
+        roughness 0.85
+      }
+      geometry Box {
+        size 0.06 0.06 0.06
+      }
+    }
+  ]
+  name "package_11_0"
+  boundingObject Box {
+    size 0.06 0.06 0.06
+  }
+  physics Physics {
+    density -1
+    mass 0.05
+  }
+  recognitionColors [
+    0.82 0.55 0.28
+  ]
+  linearVelocity -1.1764422105522241e-17 -4.305743095201501e-17 -4.023603710905379e-06
+  angularVelocity 1.3877787807814457e-15 0 -2.4303497712108705e-17
+}
+Solid {
+  translation 16.5 -11.5 0.002
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.16 0.61 0.56
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.95 0.95 0.002
+      }
+    }
+  ]
+  name "dropoff_11_16"
+}
+Group {
+  children [
+    Pose {
+      translation 8.5 -0.35 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 12.1 0.07 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -2.85 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 12.1 0.07 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 7.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 10.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 12.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 13.05 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.5 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -6.07 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 12.1 0.07 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -6.93 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 12.1 0.07 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 7.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 10.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 12.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 13.05 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.5 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -10.15 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 12.1 0.07 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -12.65 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 12.1 0.07 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 7.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 10.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 12.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 13.05 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.5 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.5 -3.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.5 -4.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.5 -5.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.5 -6.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.5 -7.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.5 -8.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6.5 -9.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.5 -3.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.5 -4.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.5 -5.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.5 -6.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.5 -7.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.5 -8.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 9.5 -9.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3 -3.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3 -4.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3 -5.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3 -6.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3 -7.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3 -8.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 3 -9.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -3.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -4.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -5.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -6.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -7.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -8.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -9.45 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.88 0.88 0.86
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 0.6 0.06 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.5 -0.88 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.5 -2.12 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation -0.12 -1.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 1.12 -1.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 1.75 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/label_pickup.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+          }
+          geometry Box {
+            size 0.95 0.28 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.5 -0.88 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.5 -2.12 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 15.88 -1.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 17.12 -1.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 15.25 -1.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/label_dropoff.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+          }
+          geometry Box {
+            size 0.95 0.28 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.5 -5.88 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.5 -7.12 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation -0.12 -6.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 1.12 -6.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 1.75 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/label_pickup.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+          }
+          geometry Box {
+            size 0.95 0.28 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.5 -5.88 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.5 -7.12 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 15.88 -6.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 17.12 -6.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 15.25 -6.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/label_dropoff.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+          }
+          geometry Box {
+            size 0.95 0.28 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.5 -10.88 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.5 -12.12 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation -0.12 -11.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 1.12 -11.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 1.75 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/label_pickup.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+          }
+          geometry Box {
+            size 0.95 0.28 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.5 -10.88 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.5 -12.12 0.0014
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 15.88 -11.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 17.12 -11.5 0.0014
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.75
+            metalness 0
+            textureTransform TextureTransform {
+              scale 1.675 1
+            }
+          }
+          geometry Box {
+            size 1.34 0.1 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 15.25 -11.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/label_dropoff.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+          }
+          geometry Box {
+            size 0.95 0.28 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5 -4.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/keepout_hatch.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+            textureTransform TextureTransform {
+              scale 2.4 3.6
+            }
+          }
+          geometry Box {
+            size 1.76 2.76 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5 -3.08 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5 -5.92 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4.08 -4.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5.92 -4.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8 -4.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/keepout_hatch.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+            textureTransform TextureTransform {
+              scale 2.4 3.6
+            }
+          }
+          geometry Box {
+            size 1.76 2.76 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8 -3.08 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8 -5.92 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 7.08 -4.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.92 -4.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11 -4.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/keepout_hatch.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+            textureTransform TextureTransform {
+              scale 2.4 3.6
+            }
+          }
+          geometry Box {
+            size 1.76 2.76 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11 -3.08 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11 -5.92 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 10.08 -4.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11.92 -4.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5 -8.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/keepout_hatch.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+            textureTransform TextureTransform {
+              scale 2.4 3.6
+            }
+          }
+          geometry Box {
+            size 1.76 2.76 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5 -7.08 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5 -9.92 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4.08 -8.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 5.92 -8.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8 -8.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/keepout_hatch.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+            textureTransform TextureTransform {
+              scale 2.4 3.6
+            }
+          }
+          geometry Box {
+            size 1.76 2.76 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8 -7.08 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8 -9.92 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 7.08 -8.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.92 -8.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11 -8.5 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/keepout_hatch.png"
+              ]
+            }
+            roughness 0.8
+            metalness 0
+            textureTransform TextureTransform {
+              scale 2.4 3.6
+            }
+          }
+          geometry Box {
+            size 1.76 2.76 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11 -7.08 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11 -9.92 0.0012
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 1.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 10.08 -8.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 11.92 -8.5 0.0012
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.95 0.76 0.1
+            roughness 0.7
+            metalness 0
+          }
+          geometry Box {
+            size 2.84 0.08 0.0016
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+  ]
+}
+Group {
+  children [
+    Pose {
+      translation 8.5 0 1.45
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.56 0.59 0.62
+            roughness 0.45
+            metalness 0.6
+          }
+          geometry Box {
+            size 17.2 0.2 1.9
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0 -6.5 1.45
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.56 0.59 0.62
+            roughness 0.45
+            metalness 0.6
+          }
+          geometry Box {
+            size 0.2 13.2 1.9
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 17 -6.5 1.45
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.56 0.59 0.62
+            roughness 0.45
+            metalness 0.6
+          }
+          geometry Box {
+            size 0.2 13.2 1.9
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -13 0.7
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.56 0.59 0.62
+            roughness 0.45
+            metalness 0.6
+          }
+          geometry Box {
+            size 17.2 0.2 0.4
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -0.106 0.56
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.7
+            metalness 0
+            textureTransform TextureTransform {
+              scale 10 1
+            }
+          }
+          geometry Box {
+            size 16.8 0.012 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -12.894 0.56
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.7
+            metalness 0
+            textureTransform TextureTransform {
+              scale 10 1
+            }
+          }
+          geometry Box {
+            size 16.8 0.012 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.106 -6.5 0.56
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.7
+            metalness 0
+            textureTransform TextureTransform {
+              scale 10 1
+            }
+          }
+          geometry Box {
+            size 12.8 0.012 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.894 -6.5 0.56
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/hazard_stripes.png"
+              ]
+            }
+            roughness 0.7
+            metalness 0
+            textureTransform TextureTransform {
+              scale 10 1
+            }
+          }
+          geometry Box {
+            size 12.8 0.012 0.1
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 2 -0.107 1.51
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4 -0.107 1.51
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6 -0.107 1.51
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8 -0.107 1.51
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 10 -0.107 1.51
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 12 -0.107 1.51
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -0.107 1.51
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16 -0.107 1.51
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -0.11 1.55
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 16.75 0.02 0.05
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.107 -11 1.51
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.107 -9 1.51
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.107 -7 1.51
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.107 -5 1.51
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.107 -3 1.51
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.107 -1 1.51
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.11 -6.5 1.55
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 12.75 0.02 0.05
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.893 -11 1.51
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.893 -9 1.51
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.893 -7 1.51
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.893 -5 1.51
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.893 -3 1.51
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.893 -1 1.51
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.035 0.014 1.78
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.89 -6.5 1.55
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.18 0.19 0.21
+            roughness 0.6
+            metalness 0.4
+          }
+          geometry Box {
+            size 12.75 0.02 0.05
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+  ]
+}
+Group {
+  children [
+    Pose {
+      translation 8.5 -0.19 2.18
+      rotation 0 0 1 3.1416
+      children [
+        Pose {
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.6 0.62 0.64
+                roughness 0.3
+                metalness 0.85
+              }
+              geometry Cylinder {
+                height 16.7
+                radius 0.05
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -0.18 2.04
+      rotation 0 0 1 3.1416
+      children [
+        Pose {
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.93 0.72 0.1
+                roughness 0.4
+                metalness 0.3
+              }
+              geometry Cylinder {
+                height 16.7
+                radius 0.035
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 8.5 -0.14 1.88
+      rotation 0 0 1 3.1416
+      children [
+        Pose {
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.4 0.42 0.44
+                roughness 0.5
+                metalness 0.5
+              }
+              geometry Cylinder {
+                height 16.7
+                radius 0.018
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 2 -0.19 2.11
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.18 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4 -0.19 2.11
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.18 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 6 -0.19 2.11
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.18 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 8 -0.19 2.11
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.18 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 10 -0.19 2.11
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.18 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 12 -0.19 2.11
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.18 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 14 -0.19 2.11
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.18 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16 -0.19 2.11
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.18 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.16 -6.5 2.15
+      rotation 0 0 1 -1.5708
+      children [
+        Pose {
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.6 0.62 0.64
+                roughness 0.3
+                metalness 0.85
+              }
+              geometry Cylinder {
+                height 12.7
+                radius 0.045
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 0.175 -2 2.15
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.175 -4 2.15
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.175 -6 2.15
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.175 -8 2.15
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.175 -10 2.15
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.175 -12 2.15
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.84 -6.5 2.15
+      rotation 0 0 1 1.5708
+      children [
+        Pose {
+          rotation 0 1 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.6 0.62 0.64
+                roughness 0.3
+                metalness 0.85
+              }
+              geometry Cylinder {
+                height 12.7
+                radius 0.045
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 16.825 -2 2.15
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.825 -4 2.15
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.825 -6 2.15
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.825 -8 2.15
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.825 -10 2.15
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.825 -12 2.15
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.05 0.15 0.16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4.3 -0.15 1.965
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.4 0.42 0.44
+            roughness 0.5
+            metalness 0.5
+          }
+          geometry Cylinder {
+            height 0.43
+            radius 0.022
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 4.7 -0.15 1.965
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.4 0.42 0.44
+            roughness 0.5
+            metalness 0.5
+          }
+          geometry Cylinder {
+            height 0.43
+            radius 0.022
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 12.4 -0.15 1.895
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.4 0.42 0.44
+            roughness 0.5
+            metalness 0.5
+          }
+          geometry Cylinder {
+            height 0.29
+            radius 0.022
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 7.2 -0.19 1.4
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.6 0.62 0.64
+            roughness 0.3
+            metalness 0.85
+          }
+          geometry Cylinder {
+            height 1.56
+            radius 0.04
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 15.3 -0.18 1.33
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.93 0.72 0.1
+            roughness 0.4
+            metalness 0.3
+          }
+          geometry Cylinder {
+            height 1.42
+            radius 0.03
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 0.15 -4 1.8
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.4 0.42 0.44
+            roughness 0.5
+            metalness 0.5
+          }
+          geometry Cylinder {
+            height 0.7
+            radius 0.02
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.8 -9 1.385
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.6 0.62 0.64
+            roughness 0.3
+            metalness 0.85
+          }
+          geometry Cylinder {
+            height 1.53
+            radius 0.04
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 7.2 -0.19 0.66
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Cylinder {
+            height 0.08
+            radius 0.055
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.8 -9 0.66
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Cylinder {
+            height 0.08
+            radius 0.055
+            subdivision 16
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+  ]
+}
+Group {
+  children [
+    Pose {
+      translation 4.5 -0.21 1.22
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.72 0.73 0.69
+            roughness 0.5
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.8 0.22 0.95
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0.112 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.18 0.19 0.21
+                roughness 0.6
+                metalness 0.4
+              }
+              geometry Box {
+                size 0.006 0.004 0.89
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.09 0.125 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.22 0.23 0.25
+                roughness 0.45
+                metalness 0.8
+              }
+              geometry Box {
+                size 0.03 0.03 0.16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation -0.2 0.113 0.25
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/label_voltage.png"
+                  ]
+                }
+                roughness 0.6
+                metalness 0
+              }
+              geometry Box {
+                size 0.22 0.004 0.15
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0 0.495
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.22 0.23 0.25
+                roughness 0.45
+                metalness 0.8
+              }
+              geometry Box {
+                size 0.84 0.24 0.04
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.28 0.12 0.36
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.04 0.04 0.04
+                roughness 0.4
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.02
+                radius 0.035
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.28 0.132 0.36
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.1 1 0.25
+                roughness 0.2
+                metalness 0
+                emissiveColor 0.1 1 0.25
+                emissiveIntensity 3
+              }
+              geometry Sphere {
+                radius 0.025
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 12.4 -0.21 1.22
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.72 0.73 0.69
+            roughness 0.5
+            metalness 0.4
+          }
+          geometry Box {
+            size 0.8 0.22 0.95
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0.112 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.18 0.19 0.21
+                roughness 0.6
+                metalness 0.4
+              }
+              geometry Box {
+                size 0.006 0.004 0.89
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.09 0.125 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.22 0.23 0.25
+                roughness 0.45
+                metalness 0.8
+              }
+              geometry Box {
+                size 0.03 0.03 0.16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation -0.2 0.113 0.25
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/label_voltage.png"
+                  ]
+                }
+                roughness 0.6
+                metalness 0
+              }
+              geometry Box {
+                size 0.22 0.004 0.15
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0 0.495
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.22 0.23 0.25
+                roughness 0.45
+                metalness 0.8
+              }
+              geometry Box {
+                size 0.84 0.24 0.04
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.28 0.12 0.36
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.04 0.04 0.04
+                roughness 0.4
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.02
+                radius 0.035
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.28 0.132 0.36
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.08 0.05
+                roughness 0.2
+                metalness 0
+                emissiveColor 1 0.08 0.05
+                emissiveIntensity 3
+              }
+              geometry Sphere {
+                radius 0.025
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+Group {
+  children [
+    Pose {
+      translation 0.165 -4 1.18
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.75 0.05 0.04
+            roughness 0.4
+            metalness 0
+          }
+          geometry Box {
+            size 0.42 0.13 0.55
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0.068 0.17
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/display_ok.png"
+                  ]
+                }
+                roughness 0.3
+                metalness 0
+                emissiveColor 0.25 0.9 0.35
+                emissiveIntensity 0.6
+              }
+              geometry Box {
+                size 0.26 0.006 0.1
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0.075 -0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.95 0.75 0.08
+                roughness 0.75
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.02
+                radius 0.11
+                subdivision 24
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0.105 -0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.22 0.23 0.25
+                roughness 0.45
+                metalness 0.8
+              }
+              geometry Cylinder {
+                height 0.05
+                radius 0.035
+                subdivision 20
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0.14 -0.02
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.85 0.02 0.02
+                roughness 0.25
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.035
+                radius 0.085
+                subdivision 28
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0.068 -0.205
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColorMap ImageTexture {
+                  url [
+                    "textures/label_estop.png"
+                  ]
+                }
+                roughness 0.6
+                metalness 0
+              }
+              geometry Box {
+                size 0.4 0.006 0.1
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+Group {
+  children [
+    Pose {
+      translation 0.6 -0.16 2.2
+      rotation 0 0 1 3.1416
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.16 0.12 0.18
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0.13 0
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 0.14
+                radius 0.015
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0.2 -0.01
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Sphere {
+                radius 0.025
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0.22 -0.05
+          rotation 0 0 1 2.1817
+          children [
+            Pose {
+              rotation 0 1 0 0.5236
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.85 0.86 0.86
+                    roughness 0.4
+                    metalness 0.3
+                  }
+                  geometry Box {
+                    size 0.2 0.08 0.08
+                  }
+                  castShadows FALSE
+                }
+                Pose {
+                  translation 0.01 0 0.048
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.22 0.23 0.25
+                        roughness 0.45
+                        metalness 0.8
+                      }
+                      geometry Box {
+                        size 0.24 0.1 0.012
+                      }
+                      castShadows FALSE
+                    }
+                  ]
+                }
+                Pose {
+                  translation 0.105 0 0
+                  rotation 0 1 0 1.5708
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.04 0.04 0.04
+                        roughness 0.4
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.02
+                        radius 0.026
+                        subdivision 20
+                      }
+                      castShadows FALSE
+                    }
+                  ]
+                }
+                Pose {
+                  translation 0.1 0.03 0.03
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 1 0.05 0.03
+                        roughness 0.2
+                        metalness 0
+                        emissiveColor 1 0.04 0.02
+                        emissiveIntensity 6
+                      }
+                      geometry Sphere {
+                        radius 0.008
+                        subdivision 2
+                      }
+                      castShadows FALSE
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 16.84 -12.4 2.2
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.22 0.23 0.25
+            roughness 0.45
+            metalness 0.8
+          }
+          geometry Box {
+            size 0.16 0.12 0.18
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0.13 0
+          rotation 1 0 0 1.5708
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 0.14
+                radius 0.015
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0.2 -0.01
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Sphere {
+                radius 0.025
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0 0.22 -0.05
+          rotation 0 0 1 0.9599
+          children [
+            Pose {
+              rotation 0 1 0 0.5236
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.85 0.86 0.86
+                    roughness 0.4
+                    metalness 0.3
+                  }
+                  geometry Box {
+                    size 0.2 0.08 0.08
+                  }
+                  castShadows FALSE
+                }
+                Pose {
+                  translation 0.01 0 0.048
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.22 0.23 0.25
+                        roughness 0.45
+                        metalness 0.8
+                      }
+                      geometry Box {
+                        size 0.24 0.1 0.012
+                      }
+                      castShadows FALSE
+                    }
+                  ]
+                }
+                Pose {
+                  translation 0.105 0 0
+                  rotation 0 1 0 1.5708
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 0.04 0.04 0.04
+                        roughness 0.4
+                        metalness 0
+                      }
+                      geometry Cylinder {
+                        height 0.02
+                        radius 0.026
+                        subdivision 20
+                      }
+                      castShadows FALSE
+                    }
+                  ]
+                }
+                Pose {
+                  translation 0.1 0.03 0.03
+                  children [
+                    Shape {
+                      appearance PBRAppearance {
+                        baseColor 1 0.05 0.03
+                        roughness 0.2
+                        metalness 0
+                        emissiveColor 1 0.04 0.02
+                        emissiveIntensity 6
+                      }
+                      geometry Sphere {
+                        radius 0.008
+                        subdivision 2
+                      }
+                      castShadows FALSE
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+Group {
+  children [
+    Pose {
+      translation 0.105 -9 1.9
+      rotation 0 0 1 -1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/sign_pickup.png"
+              ]
+            }
+            roughness 0.6
+            metalness 0
+          }
+          geometry Box {
+            size 1.2 0.01 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+    Pose {
+      translation 16.895 -4 1.9
+      rotation 0 0 1 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "textures/sign_dropoff.png"
+              ]
+            }
+            roughness 0.6
+            metalness 0
+          }
+          geometry Box {
+            size 1.2 0.01 0.3
+          }
+          castShadows FALSE
+        }
+      ]
+    }
+  ]
+}
+Group {
+  children [
+    Pose {
+      translation 5 -4.5 2.9
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3 0.31 0.33
+            roughness 0.5
+            metalness 0.6
+          }
+          geometry Box {
+            size 1.8 0.2 0.07
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0 -0.04
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.95 0.96 1
+                roughness 0.3
+                metalness 0
+                emissiveColor 1 0.97 0.9
+                emissiveIntensity 2.5
+              }
+              geometry Box {
+                size 1.72 0.14 0.012
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation -0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 8 -4.5 2.9
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3 0.31 0.33
+            roughness 0.5
+            metalness 0.6
+          }
+          geometry Box {
+            size 1.8 0.2 0.07
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0 -0.04
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.95 0.96 1
+                roughness 0.3
+                metalness 0
+                emissiveColor 1 0.97 0.9
+                emissiveIntensity 2.5
+              }
+              geometry Box {
+                size 1.72 0.14 0.012
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation -0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 11 -4.5 2.9
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3 0.31 0.33
+            roughness 0.5
+            metalness 0.6
+          }
+          geometry Box {
+            size 1.8 0.2 0.07
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0 -0.04
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.95 0.96 1
+                roughness 0.3
+                metalness 0
+                emissiveColor 1 0.97 0.9
+                emissiveIntensity 2.5
+              }
+              geometry Box {
+                size 1.72 0.14 0.012
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation -0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 5 -8.5 2.9
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3 0.31 0.33
+            roughness 0.5
+            metalness 0.6
+          }
+          geometry Box {
+            size 1.8 0.2 0.07
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0 -0.04
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.95 0.96 1
+                roughness 0.3
+                metalness 0
+                emissiveColor 1 0.97 0.9
+                emissiveIntensity 2.5
+              }
+              geometry Box {
+                size 1.72 0.14 0.012
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation -0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 8 -8.5 2.9
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3 0.31 0.33
+            roughness 0.5
+            metalness 0.6
+          }
+          geometry Box {
+            size 1.8 0.2 0.07
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0 -0.04
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.95 0.96 1
+                roughness 0.3
+                metalness 0
+                emissiveColor 1 0.97 0.9
+                emissiveIntensity 2.5
+              }
+              geometry Box {
+                size 1.72 0.14 0.012
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation -0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+    Pose {
+      translation 11 -8.5 2.9
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3 0.31 0.33
+            roughness 0.5
+            metalness 0.6
+          }
+          geometry Box {
+            size 1.8 0.2 0.07
+          }
+          castShadows FALSE
+        }
+        Pose {
+          translation 0 0 -0.04
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.95 0.96 1
+                roughness 0.3
+                metalness 0
+                emissiveColor 1 0.97 0.9
+                emissiveIntensity 2.5
+              }
+              geometry Box {
+                size 1.72 0.14 0.012
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation -0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+        Pose {
+          translation 0.75 0 0.835
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.62 0.64 0.66
+                roughness 0.35
+                metalness 0.9
+              }
+              geometry Cylinder {
+                height 1.6
+                radius 0.005
+                subdivision 16
+              }
+              castShadows FALSE
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+PointLight {
+  attenuation 0 0 0.08
+  color 1 0.97 0.9
+  intensity 0.45
+  location 5 -4.5 2.75
+  radius 9
+}
+PointLight {
+  attenuation 0 0 0.08
+  color 1 0.97 0.9
+  intensity 0.45
+  location 8 -4.5 2.75
+  radius 9
+}
+PointLight {
+  attenuation 0 0 0.08
+  color 1 0.97 0.9
+  intensity 0.45
+  location 11 -4.5 2.75
+  radius 9
+}
+PointLight {
+  attenuation 0 0 0.08
+  color 1 0.97 0.9
+  intensity 0.45
+  location 5 -8.5 2.75
+  radius 9
+}
+PointLight {
+  attenuation 0 0 0.08
+  color 1 0.97 0.9
+  intensity 0.45
+  location 8 -8.5 2.75
+  radius 9
+}
+PointLight {
+  attenuation 0 0 0.08
+  color 1 0.97 0.9
+  intensity 0.45
+  location 11 -8.5 2.75
+  radius 9
+}
+Youbot {
+  hidden position_0_0 -3.4032589617538633e-06
+  hidden position_0_1 -3.4071926063718198e-06
+  hidden position_0_2 4.4666455683546585e-06
+  hidden position_0_3 4.4639513079212386e-06
+  hidden linearVelocity_0 -6.80671253627341e-10 -2.3132371598691204e-11 4.198010230835262e-09
+  hidden angularVelocity_0 3.609259649292899e-10 -1.0493623248034134e-08 8.961624939967148e-13
+  hidden position_5_0 -4.1887842087701917e-10
+  hidden position_6_0 1.4000026366755163
+  hidden linearVelocity_6 -2.430663833650031e-09 -8.284319897206689e-11 6.340282747317377e-09
+  hidden angularVelocity_6 3.617603176241131e-10 -1.0481276021799349e-08 3.0956326004274328e-12
+  hidden rotation_7 0 -1 0 1.4000026366755163
+  hidden position_7_0 -2.500001962473664
+  hidden linearVelocity_7 -3.203392590689118e-08 -1.0905763435394791e-10 -1.602423894916301e-07
+  hidden angularVelocity_7 3.953276030360214e-10 -2.1755463890146873e-06 1.805778817483522e-10
+  hidden rotation_8 0 1 0 2.500001962473664
+  hidden position_8_0 1.6000003081124687
+  hidden linearVelocity_8 -2.684755671263966e-08 -1.4343176223808482e-10 -3.926775889461926e-07
+  hidden angularVelocity_8 3.4771152904305204e-10 1.1680433000044554e-06 -9.243775464913167e-11
+  hidden rotation_9 0 -1 0 1.6000003081124687
+  hidden position_9_0 -5.097537155635771e-15
+  hidden linearVelocity_9 3.6653214378738136e-08 -1.6690493700594214e-10 -4.510332347596877e-07
+  hidden angularVelocity_9 3.4766169011048393e-10 1.1671861218664569e-06 -9.232914023718424e-11
+  hidden position_10_0 0.025000000024106458
+  hidden position_10_1 0.02499999997589511
+  hidden linearVelocity_10 1.3924935402117537e-07 -1.9305052773457877e-10 -3.9536846348579797e-07
+  hidden angularVelocity_10 3.476744389162599e-10 1.16718624652713e-06 -9.235122318142095e-11
+  hidden translation_11 0 0.025000000024106458 0.09
+  hidden linearVelocity_11 2.0594465696017527e-07 -2.1006070445728456e-10 -3.591970864154822e-07
+  hidden angularVelocity_11 3.477666248029702e-10 1.1671862375399123e-06 -9.233152674134289e-11
+  hidden translation_12 0 -0.02499999997589511 0.09
+  hidden linearVelocity_12 2.0594488836095788e-07 -2.1004197486114087e-10 -3.592226725264899e-07
+  hidden angularVelocity_12 3.476226000989437e-10 1.1671862486638586e-06 -9.240106774323066e-11
+  hidden rotation_13 0 -0.9999999999999999 0 3.4032112177901075e-06
+  hidden linearVelocity_13 -5.188190100034462e-10 -2.0751726295783716e-11 6.376832857462731e-09
+  hidden angularVelocity_13 3.606900666783999e-10 -1.0493463065907639e-08 8.961403880803323e-13
+  hidden rotation_14 0 -0.9999999999999999 0 3.40725404452077e-06
+  hidden linearVelocity_14 -5.182733357160665e-10 -1.4295535024456005e-11 6.488576218561637e-09
+  hidden angularVelocity_14 3.609925682531515e-10 -1.0493487492072064e-08 8.961518364664395e-13
+  hidden rotation_15 0 1 0 4.4666712260622234e-06
+  hidden linearVelocity_15 -5.288563600589427e-10 -2.031489067828503e-11 1.6868676766603253e-09
+  hidden angularVelocity_15 3.608413168093436e-10 -1.0493714844435934e-08 8.962078267283402e-13
+  hidden rotation_16 0 1 0 4.463986001815002e-06
+  hidden linearVelocity_16 -5.28761128060593e-10 -1.5971029689475892e-11 1.798609332613497e-09
+  hidden angularVelocity_16 3.6104298455593666e-10 -1.0493719274898645e-08 8.961280143209713e-13
+  translation 15.50014738562332 -11.499987520847787 0.09887538526498425
+  rotation -0.024970848865013617 0.9996795429051809 0.004155502839489148 0.0032719689031317878
+  name "robot_0"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "0"
+    "--start-row"
+    "11"
+    "--start-col"
+    "15"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_0 Camera {
+      translation 0.041026359311285204 4.820619585925386e-11 0.4460774131218396
+      rotation -2.0964042417683648e-10 -1 -1.243569683735859e-10 2.070797544643408
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}
+Youbot {
+  hidden position_0_0 -203.8724101183631
+  hidden position_0_1 155.12173927314385
+  hidden position_0_2 152.4549425736321
+  hidden position_0_3 -201.20554630999112
+  hidden linearVelocity_0 -0.21201112333366748 -0.33919259074036856 -9.074734379424819e-09
+  hidden angularVelocity_0 -1.5503500195272915e-07 4.984211469263686e-07 7.630628095455612e-07
+  hidden position_5_0 -4.213406719888755e-10
+  hidden position_6_0 1.4000022036587834
+  hidden linearVelocity_6 -0.21201103748024802 -0.3391924359435644 -9.361042995692848e-08
+  hidden angularVelocity_6 -1.5502539860571256e-07 4.984161107100125e-07 7.630822121610771e-07
+  hidden rotation_7 0 -1 0 1.4000022036587834
+  hidden position_7_0 -2.5000012937498206
+  hidden linearVelocity_7 -0.21201096474231027 -0.33919248030462223 1.082083054309642e-07
+  hidden angularVelocity_7 1.8999041464795367e-08 2.656456709048139e-06 7.629058981669071e-07
+  hidden rotation_8 0 1 0 2.5000012937498206
+  hidden position_8_0 1.6000003079405558
+  hidden linearVelocity_8 -0.2120109900572823 -0.3391924835971585 3.385763930136916e-07
+  hidden angularVelocity_8 -2.497528968131195e-07 -6.762837351683336e-07 7.631747644587519e-07
+  hidden rotation_9 0 -1 0 1.6000003079405558
+  hidden position_9_0 6.102376926279627e-14
+  hidden linearVelocity_9 -0.21201100655915664 -0.339192433313512 3.773807809910232e-07
+  hidden angularVelocity_9 -2.496828858187434e-07 -6.754254551700538e-07 7.631747257938149e-07
+  hidden position_10_0 0.025000000024202846
+  hidden position_10_1 0.024999999975797143
+  hidden linearVelocity_10 -0.21201106882534107 -0.3391924476209668 3.4425558294252146e-07
+  hidden angularVelocity_10 -2.4968247610202944e-07 -6.754251477915542e-07 7.631742454198286e-07
+  hidden translation_11 0 0.025000000024202846 0.09
+  hidden linearVelocity_11 -0.21201113594246235 -0.33919245477090965 3.159607415408802e-07
+  hidden angularVelocity_11 -2.4968261561966723e-07 -6.754250618768655e-07 7.631741500873932e-07
+  hidden translation_12 0 -0.024999999975797143 0.09
+  hidden linearVelocity_12 -0.2120110826975386 -0.33919245906339923 3.29581736420927e-07
+  hidden angularVelocity_12 -2.4968238799614624e-07 -6.754251341236552e-07 7.631743918546996e-07
+  hidden rotation_13 0 -1 0 2.8104802886163247
+  hidden linearVelocity_13 -0.21201163948094404 -0.33919297789654335 -8.577676688026143e-08
+  hidden angularVelocity_13 -0.8667793434049086 -10.749056183817448 0.0008832779437185831
+  hidden rotation_14 0 0.9999999999999999 0 4.325291900833769
+  hidden linearVelocity_14 -0.21201178788410538 -0.3391917651648394 -1.460667477462663e-07
+  hidden angularVelocity_14 0.2750068117981737 3.4104028110033164 -0.0002792345949253296
+  hidden rotation_15 0 1 0 1.6584952013220344
+  hidden linearVelocity_15 -0.21201047428306274 -0.33919342463244917 1.3075714399210237e-07
+  hidden angularVelocity_15 0.275006765202294 3.4104027276549576 -0.00027922305412308806
+  hidden rotation_16 0 -1 0 0.14361648024435503
+  hidden linearVelocity_16 -0.2120106228171223 -0.33919221252045406 7.04683855447916e-08
+  hidden angularVelocity_16 -0.8667793091225908 -10.749056275392533 0.0008832990517578677
+  translation 5.5499583874334215 -4.62043562039084 0.0988753850923319
+  rotation 0.0006183430216343056 0.040636932770417 -0.9991737873597966 0.0805301585638167
+  name "robot_1"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "1"
+    "--start-row"
+    "9"
+    "--start-col"
+    "2"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_1 Camera {
+      translation 0.04102641215237944 4.846604679424425e-11 0.44607734583634384
+      rotation -2.1075435846621586e-10 -1.0000000000000002 -1.250000680119008e-10 2.070797309108195
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}
+Youbot {
+  hidden position_0_0 197.25494461625064
+  hidden position_0_1 -239.97528813644342
+  hidden position_0_2 -554.9486363837229
+  hidden position_0_3 512.2234401831463
+  hidden linearVelocity_0 -0.35085963732981124 0.19208592482375672 -7.610287866557969e-09
+  hidden angularVelocity_0 -9.125919721726247e-07 8.653207451958309e-08 -3.676582038386877e-07
+  hidden position_5_0 -6.098098078783717e-11
+  hidden position_6_0 1.4000022036605835
+  hidden linearVelocity_6 -0.35085961927212833 0.19208601477470355 -3.2084165409493884e-08
+  hidden angularVelocity_6 -9.126331690867957e-07 8.65006613058339e-08 -3.714318877992783e-07
+  hidden rotation_7 0 -1 0 1.4000022036605833
+  hidden position_7_0 -2.500001293758862
+  hidden linearVelocity_7 -0.35085960201587635 0.1920860672783081 1.750904947114019e-07
+  hidden angularVelocity_7 -9.126358609307169e-07 2.251521261343646e-06 -3.7162023262154593e-07
+  hidden rotation_8 0 1 0 2.500001293758862
+  hidden position_8_0 1.600000307940194
+  hidden linearVelocity_8 -0.3508595844744749 0.19208611290608385 3.606858309676708e-07
+  hidden angularVelocity_8 -9.12664892499791e-07 -1.092164326922423e-06 -3.7133785931126704e-07
+  hidden rotation_9 0 -1 0 1.600000307940194
+  hidden position_9_0 -9.702688836161077e-12
+  hidden linearVelocity_9 -0.3508596521897981 0.19208614401249963 4.3558775343110467e-07
+  hidden angularVelocity_9 -9.126677034814017e-07 -1.091305055304772e-06 -3.7133946506217715e-07
+  hidden position_10_0 0.025000000024339164
+  hidden position_10_1 0.024999999975660422
+  hidden linearVelocity_10 -0.35085974809969733 0.19208624195933688 3.83491439662703e-07
+  hidden angularVelocity_10 -9.127171129918962e-07 -1.0913054850914583e-06 -3.7125009606299815e-07
+  hidden translation_11 0 0.025000000024339164 0.09
+  hidden linearVelocity_11 -0.35085979745861895 0.19208630561381906 3.177303251907581e-07
+  hidden angularVelocity_11 -9.127172773722247e-07 -1.091305477124512e-06 -3.7125019156222023e-07
+  hidden translation_12 0 -0.024999999975660422 0.09
+  hidden linearVelocity_12 -0.35085982345218736 0.1920863056191749 3.8162025687659204e-07
+  hidden angularVelocity_12 -9.127170229498038e-07 -1.0913054817075638e-06 -3.7125000261064977e-07
+  hidden rotation_13 0 -1 0 3.8069852134961275
+  hidden linearVelocity_13 -0.350859783382871 0.19208574101867681 1.147867703112851e-07
+  hidden angularVelocity_13 -1.1584889043998689e-05 -3.175511742745105 0.0002596574768339689
+  hidden rotation_14 0 -1 0 1.2142464636191386
+  hidden linearVelocity_14 -0.35085970076228246 0.19208594774660379 -1.6793906873101745e-07
+  hidden angularVelocity_14 -3.7352732419324575e-05 -10.858918986370544 0.0008889190453985694
+  hidden rotation_15 0 -1 0 2.0283293519193317
+  hidden linearVelocity_15 -0.35085957594452594 0.1920858759078945 1.5347215473601452e-07
+  hidden angularVelocity_15 -3.736732250599671e-05 -10.85891900990301 0.0008889054910697999
+  hidden rotation_16 0 -1 0 2.9977550055797964
+  hidden linearVelocity_16 -0.3508594940795318 0.1920860829968119 -1.2926025370103234e-07
+  hidden angularVelocity_16 -1.1574630093460422e-05 -3.1755117665540804 0.00025965151116217076
+  translation 13.37150250237021 -3.7144896726157817 0.0988753850968438
+  rotation -0.02503299351849767 0.9996860515461379 -0.0010712514155826881 0.0032719644160593233
+  name "robot_2"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "2"
+    "--start-row"
+    "0"
+    "--start-col"
+    "7"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_2 Camera {
+      translation 0.04102641215563804 4.893960584160806e-12 0.44607734583636893
+      rotation -2.4312239749807577e-11 -1 -1.7731590964690297e-11 2.07079730909638
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}
+Youbot {
+  hidden position_0_0 64.51718327872007
+  hidden position_0_1 124.31984866978448
+  hidden position_0_2 -122.26054924016441
+  hidden position_0_3 311.5284535679389
+  hidden linearVelocity_0 0.06937422155030386 -0.39393764162644107 -7.704366473805109e-09
+  hidden angularVelocity_0 1.131372347828901e-06 -6.07242921415515e-08 5.3610061579016964e-06
+  hidden position_5_0 4.636337260320456e-09
+  hidden position_6_0 1.4000025467123873
+  hidden linearVelocity_6 0.06937423151940902 -0.39393692477317976 -2.234144889044754e-09
+  hidden angularVelocity_6 1.1313592424541817e-06 -6.0711337107115e-08 5.307390098757667e-06
+  hidden rotation_7 0 -0.9999999999999999 0 1.4000025467123873
+  hidden position_7_0 -2.5000012930029953
+  hidden linearVelocity_7 0.06937443467176328 -0.3939372927247416 5.882170330845221e-08
+  hidden angularVelocity_7 1.2415858297497407e-06 1.3057716675261232e-06 5.3073527497981945e-06
+  hidden rotation_8 0 1 0 2.5000012930029953
+  hidden position_8_0 1.6000003079371434
+  hidden linearVelocity_8 0.06937410769871451 -0.3939374100729928 3.3621846720013835e-07
+  hidden angularVelocity_8 9.735086942918931e-07 -2.019838446537198e-06 5.307580189453732e-06
+  hidden rotation_9 0 -1 0 1.6000003079371432
+  hidden position_9_0 2.3255567538960841e-10
+  hidden linearVelocity_9 0.06937413831390443 -0.3939372078357034 4.073302480452817e-07
+  hidden angularVelocity_9 9.735925506399765e-07 -2.018980830111053e-06 5.307588397279398e-06
+  hidden position_10_0 0.02500000002386967
+  hidden position_10_1 0.02499999997613456
+  hidden linearVelocity_10 0.06937394049766907 -0.3939375456040763 3.150726252010513e-07
+  hidden angularVelocity_10 9.747563648922102e-07 -2.019074256649125e-06 5.305443917021049e-06
+  hidden translation_11 0 0.02500000002386967 0.09
+  hidden linearVelocity_11 0.06937362681019459 -0.3939377501897618 2.948374258219608e-07
+  hidden angularVelocity_11 9.747564225423218e-07 -2.0190742121771704e-06 5.305443958767367e-06
+  hidden translation_12 0 -0.02499999997613456 0.09
+  hidden linearVelocity_12 0.06937399697879383 -0.3939377800393513 2.1546808550741048e-07
+  hidden angularVelocity_12 9.747566922544493e-07 -2.019074217305221e-06 5.305444195275337e-06
+  hidden rotation_13 0 1 0 1.6853302069242038
+  hidden linearVelocity_13 0.06937524452202293 -0.3939364190508669 -1.8968918318744892e-07
+  hidden angularVelocity_13 -0.46010346058664003 -5.70713422459086 0.0004747504014988977
+  hidden rotation_14 0 -1 0 1.3438574738072517
+  hidden linearVelocity_14 0.06937353208686496 -0.3939364181791406 1.6115530790763844e-07
+  hidden angularVelocity_14 0.7841327195487707 9.726358977807735 -0.000794094760407726
+  hidden rotation_15 0 1 0 3.403156903427321
+  hidden linearVelocity_15 0.06937490523071098 -0.3939388529564382 -1.761065298210705e-07
+  hidden angularVelocity_15 0.7841327478838147 9.726358988618326 -0.0007940590927083844
+  hidden rotation_16 0 -1 0 2.630811791040399
+  hidden linearVelocity_16 0.06937320197582392 -0.3939388552351517 1.7474052491169916e-07
+  hidden angularVelocity_16 -0.4601034500022154 -5.707134211614508 0.00047474079412864167
+  translation 15.100598849153915 -4.553605444484276 0.09887538509832594
+  rotation 0.000616940299956751 0.04064554985474379 -0.9991734377282414 0.08051172317327858
+  name "robot_3"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "3"
+    "--start-row"
+    "12"
+    "--start-col"
+    "16"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_3 Camera {
+      translation 0.04102643570757243 -5.683741389766823e-10 0.44607735759071726
+      rotation 2.5441799223660052e-09 -0.9999999999999999 1.5883106130868198e-09 2.070797230411744
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}
+Youbot {
+  hidden position_0_0 -175.47831152127912
+  hidden position_0_1 -110.90527819202771
+  hidden position_0_2 -113.4496355546104
+  hidden position_0_3 -172.93699936002298
+  hidden linearVelocity_0 -0.39755294705811367 -0.04417648712258053 7.669989560982031e-09
+  hidden angularVelocity_0 3.508557133530456e-07 -1.1479041857191893e-07 3.577720479491376e-07
+  hidden position_5_0 -4.1920067210631456e-10
+  hidden position_6_0 1.4000026366747251
+  hidden linearVelocity_6 -0.3975529648763514 -0.044176484973740146 2.6549606591947284e-08
+  hidden angularVelocity_6 3.508618997797975e-07 -1.1476594822271415e-07 3.577647921139708e-07
+  hidden rotation_7 0 -1 0 1.4000026366747251
+  hidden position_7_0 -2.5000019624741108
+  hidden linearVelocity_7 -0.3975529853013898 -0.04417651648536174 -1.5846140313710892e-07
+  hidden angularVelocity_7 1.7687930857789613e-07 -2.2727992085993615e-06 3.5794482512791645e-07
+  hidden rotation_8 0 1 0 2.5000019624741108
+  hidden position_8_0 1.6000003081127003
+  hidden linearVelocity_8 -0.39755300383205705 -0.04417653676022641 -3.7311582616319667e-07
+  hidden angularVelocity_8 4.4558041212191897e-07 1.0599540876716548e-06 3.5767056690492674e-07
+  hidden rotation_9 0 -1 0 1.6000003081127
+  hidden position_9_0 -1.0559156872064484e-14
+  hidden linearVelocity_9 -0.39755293677592285 -0.044176543786084245 -4.355698723197616e-07
+  hidden angularVelocity_9 4.455118222297334e-07 1.0590984650580666e-06 3.576710391964862e-07
+  hidden position_10_0 0.02500000002419478
+  hidden position_10_1 0.024999999975805154
+  hidden linearVelocity_10 -0.39755284507057365 -0.04417659994187959 -3.8346959774894277e-07
+  hidden angularVelocity_10 4.455118998897648e-07 1.0590987334932587e-06 3.576712856452381e-07
+  hidden translation_11 0 0.02500000002419478 0.09
+  hidden linearVelocity_11 -0.39755279792695986 -0.04417663543612137 -3.3708728235399333e-07
+  hidden angularVelocity_11 4.455120259582551e-07 1.0590987044183916e-06 3.5767135634649994e-07
+  hidden translation_12 0 -0.024999999975805154 0.09
+  hidden linearVelocity_12 -0.3975527729647183 -0.04417663745068516 -3.622145387182309e-07
+  hidden angularVelocity_12 4.455117854519726e-07 1.0590987204966355e-06 3.5767125322579134e-07
+  hidden rotation_13 0 1 0 0.4508770797492972
+  hidden linearVelocity_13 -0.3975527965795487 -0.04417633273336978 -2.903475952052192e-08
+  hidden angularVelocity_13 -0.7532943426088757 -9.343650129563649 0.000767423897442816
+  hidden rotation_14 0 1 0 2.192057337204848
+  hidden linearVelocity_14 -0.3975529001938289 -0.044176508243783705 8.217012684462455e-08
+  hidden angularVelocity_14 -0.5090600635131745 -6.314238647061078 0.0005186947921728759
+  hidden rotation_15 0 -0.9999999999999999 0 0.35230002537783944
+  hidden linearVelocity_15 -0.3975529907242558 -0.04417645723357233 -6.757805756701199e-08
+  hidden angularVelocity_15 -0.5090600363803596 -6.314238643374195 0.0005187150168469168
+  hidden rotation_16 0 1 0 2.9921892410054407
+  hidden linearVelocity_16 -0.39755309417521856 -0.044176632799229607 4.362608670824413e-08
+  hidden angularVelocity_16 -0.7532943391193858 -9.343650123258241 0.0007673819647933149
+  translation 6.8430087345880795 -2.9062822673185353 0.09887538532557011
+  rotation 0.0006185280807707832 0.040644642768182505 -0.999173473645723 0.08051363923472851
+  name "robot_4"
+  controller "<extern>"
+  controllerArgs [
+    "--robot-id"
+    "4"
+    "--start-row"
+    "3"
+    "--start-col"
+    "1"
+  ]
+  supervisor TRUE
+  bodySlot [
+    Solid {
+      translation -0.15 -0.14 0.355
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.1 0.1
+            roughness 0.6
+          }
+          geometry Cylinder {
+            height 0.35
+            radius 0.015
+            subdivision 12
+          }
+        }
+      ]
+      name "status_mast"
+    }
+    LED {
+      translation -0.15 -0.14 0.53
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.12 0.12 0.12
+            roughness 0.5
+          }
+          geometry Sphere {
+            radius 0.07
+            subdivision 2
+          }
+        }
+      ]
+      name "led_to_item"
+      color [
+        0.15 0.55 0.95
+      ]
+    }
+    Lidar {
+      translation 0 0 0.15
+      horizontalResolution 180
+      fieldOfView 6.283185
+      numberOfLayers 1
+      minRange 0.05
+      maxRange 1.5
+    }
+    DEF PICKUP_CAMERA_4 Camera {
+      translation 0.041026359310922286 4.810125699477339e-11 0.4460774131217341
+      rotation -2.0918987711869078e-10 -1 -1.2409605994071102e-10 2.070797544644598
+      name "pickup_camera"
+      fieldOfView 2
+      width 128
+      height 96
+      recognition Recognition {
+        maxRange 2
+      }
+    }
+  ]
+}

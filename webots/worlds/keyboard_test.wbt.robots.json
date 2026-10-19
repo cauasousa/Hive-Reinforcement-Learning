@@ -1,0 +1,10 @@
+{
+  "robot_model": "youbot",
+  "controller": "keyboard_teleop",
+  "start_cells": [
+    [
+      11,
+      15
+    ]
+  ]
+}
